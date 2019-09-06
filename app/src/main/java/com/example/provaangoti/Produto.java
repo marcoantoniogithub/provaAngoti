@@ -6,6 +6,11 @@ public class Produto {
     private String descricao;
     private String valor;
 
+    Produto(String produto,String descricao,String valor){
+        this.produto = produto;
+        this.descricao = descricao;
+        this.valor = valor;
+    }
     public String getProduto() {
         return produto;
     }

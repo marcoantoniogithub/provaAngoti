@@ -32,19 +32,21 @@ public class MainActivity extends AppCompatActivity {
         value2 = findViewById(R.id.textView5);
         nome3 = findViewById(R.id.textView6);
         value3 = findViewById(R.id.textView7);
-        buscaDados();
+        //buscaDados();
     }
 
     private void buscaDados() {
         RetrofitService.getServico().obterProdutos().enqueue(new Callback<List<Produto>>() {
             @Override
             public void onResponse(Call<List<Produto>> call, Response<List<Produto>> response) {
+                List<Produto> list =response.body();
+                Log.e("deu certo", list.toString());
 
             }
 
             @Override
             public void onFailure(Call<List<Produto>> call, Throwable t) {
-
+                Log.e("APP", t.getStackTrace().toString());
             }
         });
     }
