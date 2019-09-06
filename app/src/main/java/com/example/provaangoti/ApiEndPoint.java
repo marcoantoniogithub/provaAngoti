@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface ApiEndPoint {
 
-    @GET("produtos")
+    @GET("droidcafe")
     Call<List<Produto>> obterProdutos();
 
 }

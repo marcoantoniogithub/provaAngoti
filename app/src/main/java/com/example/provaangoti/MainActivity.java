@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         value2 = findViewById(R.id.textView5);
         nome3 = findViewById(R.id.textView6);
         value3 = findViewById(R.id.textView7);
-        //buscaDados();
+        buscaDados();
     }
 
     private void buscaDados() {
@@ -40,8 +40,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Produto>> call, Response<List<Produto>> response) {
                 List<Produto> list =response.body();
-                Log.e("deu certo", list.toString());
-
+                nome1.setText(list.get(0).getDescricao());
+                value1.setText("R$ "+list.get(0).getValor()+",00");
+                nome2.setText(list.get(1).getDescricao());
+                value2.setText("R$ "+list.get(1).getValor()+",00");
+                nome3.setText(list.get(2).getDescricao());
+                value3.setText("R$ "+list.get(2).getValor()+",00");
             }
 
             @Override

@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitService {
 
-    private String baseUrl = "http://angoti.atwebpages.com/droidcafe";
+    private String baseUrl = "http://angoti.atwebpages.com/";
     private ApiEndPoint api;
     private static RetrofitService instancia;
 
